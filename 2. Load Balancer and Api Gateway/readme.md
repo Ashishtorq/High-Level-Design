@@ -11,33 +11,23 @@ An **API Gateway** and a **Load Balancer** both help route traffic, but they ope
 
 ## API Gateway
 
-**Video section:** 0:45–15:10
-
 The API Gateway acts as the **single entry point** for client requests. It hides the internal microservice architecture, so clients do not need to know which services exist or where they are running.
 
 ### Main responsibilities
 
 #### 1. API composition
 
-**Timestamp:** 7:24
-
 The gateway can combine or tailor responses for different clients. For example, a mobile application may need a smaller response than a desktop application.
 
 #### 2. Authentication and authorization
-
-**Timestamp:** 9:40
 
 The gateway can validate access tokens and permissions centrally. This avoids repeating the same authentication logic in every microservice.
 
 #### 3. Service discovery
 
-**Timestamp:** 11:19
-
 The gateway uses service-discovery information to find active services and their network locations, such as IP addresses and ports, before routing requests.
 
 ## Load Balancer
-
-**Video section:** 15:16–19:43
 
 A Load Balancer distributes traffic across multiple **instances of the same microservice**. This improves availability, prevents individual instances from becoming overloaded, and allows the service to scale horizontally.
 
@@ -63,11 +53,7 @@ flowchart LR
 
 ## Handling Scale and Global Traffic
 
-**Video section:** 20:30–33:15
-
 ### DNS-based regional routing
-
-**Timestamp:** 20:41
 
 For systems serving millions of requests, DNS-based traffic routing can direct a client to the closest healthy geographical region. Each region can expose its own API Gateway, reducing latency for users.
 
@@ -80,8 +66,6 @@ flowchart TD
 ```
 
 ### Fault tolerance
-
-**Timestamp:** 29:34
 
 Health checks detect failures at the Availability Zone or regional level. If an AZ or an entire region becomes unavailable, traffic can be redirected to the next healthy location to maintain uptime.
 
