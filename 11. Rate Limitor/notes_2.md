@@ -327,7 +327,7 @@ Requests:         ***** *****
 - *Fixed window:* May accept both groups because the counter resets at time 10.
 - *Sliding log:* Counts the exact timestamps in the previous ten seconds and rejects requests beyond five.
 - *Sliding counter:* Uses a weighted portion of the previous counter and usually rejects most of the boundary burst, but the result is estimated.
-
+ 
 ## 7. Distributed-System Considerations
 
 The algorithm alone does not make a distributed rate limiter correct. When several application servers process requests for the same client, they need shared or coordinated state.
